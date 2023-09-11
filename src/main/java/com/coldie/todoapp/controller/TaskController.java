@@ -40,4 +40,10 @@ public class TaskController { //capa controladora solo debería comunicarse con 
         this.taskService.updateTaskAsFinished(id);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable("id")Long id){
+        this.taskService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
